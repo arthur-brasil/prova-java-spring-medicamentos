@@ -23,6 +23,14 @@ A API sobe em `http://localhost:8080`.
 
 H2 Console: `http://localhost:8080/h2-console` (JDBC URL `jdbc:h2:mem:farmacia`, usuário `sa`, sem senha).
 
+## Como rodar o Angular
+```bash
+cd angular
+npm install
+npx ng serve
+```
+Abre em `http://localhost:4200`.
+
 ## Endpoints
 | Método | Rota | Descrição |
 |---|---|---|

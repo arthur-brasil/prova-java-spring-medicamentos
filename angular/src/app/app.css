@@ -1,0 +1,108 @@
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 24px 16px;
+}
+
+h1 {
+  color: #0b6e4f;
+  margin-bottom: 16px;
+}
+
+h2 {
+  font-size: 1.1rem;
+  margin: 0 0 12px;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #dde3e0;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-weight: 600;
+  flex: 1;
+}
+
+.linha {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.checkbox {
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+
+input:not([type='checkbox']) {
+  padding: 8px;
+  border: 1px solid #b8c2bd;
+  border-radius: 6px;
+  font: inherit;
+}
+
+.botoes {
+  display: flex;
+  gap: 8px;
+}
+
+button {
+  background: #0b6e4f;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  font: inherit;
+  cursor: pointer;
+}
+
+button.secundario {
+  background: #e6efeb;
+  color: #0b6e4f;
+}
+
+.erros {
+  background: #fdecec;
+  color: #a12626;
+  border-radius: 6px;
+  padding: 8px 8px 8px 28px;
+  margin: 0;
+}
+
+.sucesso {
+  background: #e6f4ea;
+  color: #1e6b34;
+  border-radius: 6px;
+  padding: 8px;
+  margin: 0;
+}
+
+.tabela {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+  border-bottom: 1px solid #eef1ef;
+  white-space: nowrap;
+}
