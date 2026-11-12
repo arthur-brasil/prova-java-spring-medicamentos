@@ -31,6 +31,14 @@ npx ng serve
 ```
 Abre em `http://localhost:4200`.
 
+## Como rodar o Expo
+```bash
+cd expo
+npm install
+npx expo start
+```
+Aperte `w` para abrir no navegador (`http://localhost:8081`) ou leia o QR code com o Expo Go (ver `expo/README.md` para configurar o IP).
+
 ## Endpoints
 | Método | Rota | Descrição |
 |---|---|---|
