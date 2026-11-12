@@ -1,14 +1,22 @@
 # Prova Java Spring - API de Medicamentos
 
-API REST para gerenciar o catálogo de medicamentos de uma rede de farmácias (prova teste de Java Spring - FATEC Itu).
+API REST para gerenciar o catálogo de medicamentos de uma rede de farmácias, com frontends em Angular e Expo (prova teste Java/Spring-Expo-Angular - FATEC Itu).
+
+## Estrutura do repositório
+| Pasta | O que é |
+|---|---|
+| `backend/` | API Spring Boot |
+| `angular/` | Frontend web em Angular (porta 4200) |
+| `expo/` | App em Expo / React Native |
 
 ## Tecnologias
 - Java 25
 - Spring Boot 4.1.0 (Web MVC, Data JPA, Validation)
 - H2 em memória + H2 Console
 
-## Como rodar
+## Como rodar o backend
 ```bash
+cd backend
 ./mvnw spring-boot:run
 ```
 A API sobe em `http://localhost:8080`.
