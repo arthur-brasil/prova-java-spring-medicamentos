@@ -1,0 +1,90 @@
+<main class="container">
+  <h1>Medicamentos</h1>
+
+  <section class="card">
+    <h2>{{ editandoId() === null ? 'Cadastrar medicamento' : 'Editar medicamento #' + editandoId() }}</h2>
+
+    <form (ngSubmit)="salvar()">
+      <label>
+        Nome
+        <input name="nome" [(ngModel)]="form.nome">
+      </label>
+
+      <label>
+        Fabricante
+        <input name="fabricante" [(ngModel)]="form.fabricante">
+      </label>
+
+      <div class="linha">
+        <label>
+          Preço (R$)
+          <input name="preco" type="number" step="0.01" [(ngModel)]="form.preco">
+        </label>
+
+        <label>
+          Quantidade em estoque
+          <input name="quantidadeEstoque" type="number" [(ngModel)]="form.quantidadeEstoque">
+        </label>
+      </div>
+
+      <label class="checkbox">
+        <input name="controlado" type="checkbox" [(ngModel)]="form.controlado">
+        Medicamento controlado
+      </label>
+
+      @if (erros().length > 0) {
+        <ul class="erros">
+          @for (erro of erros(); track erro) {
+            <li>{{ erro }}</li>
+          }
+        </ul>
+      }
+
+      @if (mensagem()) {
+        <p class="sucesso">{{ mensagem() }}</p>
+      }
+
+      <div class="botoes">
+        <button type="submit">{{ editandoId() === null ? 'Cadastrar' : 'Salvar alterações' }}</button>
+        @if (editandoId() !== null) {
+          <button type="button" class="secundario" (click)="cancelar()">Cancelar</button>
+        }
+      </div>
+    </form>
+  </section>
+
+  <section class="card">
+    <h2>Catálogo</h2>
+
+    <div class="tabela">
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Fabricante</th>
+            <th>Preço</th>
+            <th>Estoque</th>
+            <th>Controlado</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (m of medicamentos(); track m.id) {
+            <tr>
+              <td>{{ m.id }}</td>
+              <td>{{ m.nome }}</td>
+              <td>{{ m.fabricante }}</td>
+              <td>{{ m.preco | currency:'BRL' }}</td>
+              <td>{{ m.quantidadeEstoque }}</td>
+              <td>{{ m.controlado ? 'Sim' : 'Não' }}</td>
+              <td><button type="button" class="secundario" (click)="editar(m)">Editar</button></td>
+            </tr>
+          } @empty {
+            <tr><td colspan="7">Nenhum medicamento cadastrado.</td></tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  </section>
+</main>
