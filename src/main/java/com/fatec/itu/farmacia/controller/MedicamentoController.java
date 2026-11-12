@@ -19,6 +19,8 @@ import com.fatec.itu.farmacia.entity.Medicamento;
 import com.fatec.itu.farmacia.mapper.MedicamentoMapper;
 import com.fatec.itu.farmacia.service.MedicamentoService;
 
+import jakarta.validation.Valid;
+
 @RestController
 @RequestMapping("/medicamentos")
 public class MedicamentoController {
@@ -39,7 +41,7 @@ public class MedicamentoController {
     }
 
     @PostMapping
-    public ResponseEntity<MedicamentoResponseDTO> create(@RequestBody MedicamentoRequestDTO request) {
+    public ResponseEntity<MedicamentoResponseDTO> create(@Valid @RequestBody MedicamentoRequestDTO request) {
         Medicamento m = service.create(MedicamentoMapper.toEntity(request));
         MedicamentoResponseDTO response = MedicamentoMapper.toDTO(m);
 
@@ -54,7 +56,7 @@ public class MedicamentoController {
 
     @PutMapping("{id}")
     public ResponseEntity<Void> update(@PathVariable Long id,
-                                       @RequestBody MedicamentoRequestDTO request) {
+                                       @Valid @RequestBody MedicamentoRequestDTO request) {
         service.update(id, MedicamentoMapper.toEntity(request));
         return ResponseEntity.noContent().build();
     }
